@@ -4,5 +4,6 @@ Input:
   p, principal amount
   t, time period in yeras
   r, annual rate of interest
+  
 Output
   simple interest = p*r*t
