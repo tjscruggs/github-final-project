@@ -1,9 +1,17 @@
-A calculator that simple interest given principal, annual rate of interest and time period in years.
+# Trebuchet Duel - Unity Android Prototype
 
-Input:
-  p, principal amount
-  t, time period in yeras
-  r, annual rate of interest
-  
-Output
-  simple interest = p*r*t
+This repository contains a **Unity** project (not a browser app):
+
+- Project path: `UnityTrebuchetDuel/`
+- Target: Android-first (APK build + Android Emulator testing)
+- Language: C#
+- Focus: gameplay prototype with clear architecture separation
+
+## Build and Run
+Follow: `UnityTrebuchetDuel/README.md`
+
+It includes step-by-step instructions for:
+1. Opening the project in Unity
+2. Switching platform to Android
+3. Building an APK
+4. Running in Android Emulator via Android Studio
