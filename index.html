@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trebuchet Duel Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>Trebuchet Duel</h1>
+        <p class="subtitle">Fast 2-player castle-engineering strategy prototype</p>
+      </header>
+
+      <section class="commander-panel">
+        <h2>Historical Commanders</h2>
+        <div class="pick-row">
+          <label>
+            Red Commander
+            <select id="p1Commander"></select>
+          </label>
+          <label>
+            Blue Commander
+            <select id="p2Commander"></select>
+          </label>
+        </div>
+        <div class="pick-actions">
+          <button id="applyCommandersBtn" class="secondary">Apply Commanders + Reset Match</button>
+        </div>
+        <p id="commanderAbilityText" class="commander-note"></p>
+      </section>
+
+      <section class="status-panel" aria-live="polite">
+        <div><strong>Turn:</strong> <span id="turnLabel"></span></div>
+        <div><strong>Selected Engineer:</strong> <span id="selectedLabel">None</span></div>
+        <div><strong>Pending Penalty:</strong> <span id="penaltyLabel">None</span></div>
+        <div><strong>Siege Cooldown:</strong> <span id="cooldownLabel"></span></div>
+      </section>
+
+      <section class="action-panel">
+        <button id="buildBtn">Build / Progress Trebuchet</button>
+        <button id="sabotageBtn">Sabotage Enemy Trebuchet</button>
+        <button id="repairBtn">Repair Friendly Trebuchet</button>
+        <button id="siegeBtn">Siege Action (Global)</button>
+        <button id="fireBtn">Fire Trebuchet</button>
+        <button id="endTurnBtn">End Turn</button>
+        <button id="resetBtn" class="secondary">Reset Match</button>
+      </section>
+
+      <section id="messageBox" class="message"></section>
+
+      <section class="board-wrap">
+        <div id="board" class="board" role="grid" aria-label="5 by 5 strategy board"></div>
+        <div class="legend">
+          <span><i class="castle p1"></i> Red Castle Zone</span>
+          <span><i class="castle p2"></i> Blue Castle Zone</span>
+          <span><i class="unit p1"></i> Red Engineers</span>
+          <span><i class="unit p2"></i> Blue Engineers</span>
+        </div>
+      </section>
+
+      <section class="rules">
+        <h2>Prototype Rules</h2>
+        <ul>
+          <li>Move 1 selected engineer to any adjacent empty tile, then perform one action.</li>
+          <li>Trebuchet components near your castle: Base → Frame → Counterweight → Sling.</li>
+          <li>Sabotage removes one enemy component (never the Base).</li>
+          <li>Siege Action removes one component globally (never the Base), then skips your next turn. 2-turn cooldown.</li>
+          <li>After Sling is complete, you must spend a later turn to Fire and win.</li>
+          <li>Commanders provide era-themed engineer visuals and unique tactical perks.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
